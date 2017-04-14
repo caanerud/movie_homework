@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Movie page</title>
+    <link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}"/>
+
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html" th:href="@{/}">Movies - Home</a></li>
+        <li><a href="movieform.html" th:href="@{/movieform}">Add Movie</a></li>
+    </ul>
+</nav>
+
+<h1>Movie List</h1>
+
+<form action="index.html" th:action="@{/}" method="get">
+    <label>
+        <span>Search:</span>
+        <input type="text" name="search" value="" th:value="${search}" />
+    </label>
+    <button>Search</button>
+</form>
+
+<p>Showing <span th:text="${movies.size()}">movies.size()</span> movies.</p>
+
+<table>
+    <tr>
+        <th>
+            <a href="index.html" title="Sort by movie title">Movie Title</a>
+        </th>
+
+        <th>
+            Edit
+        </th>
+    </tr>
+    <tr th:each="movie : ${movies}">
+        <td th:text="${movie.getTitle()}">movie.getTitle()</td>
+
+        <td><a href="movieform.html" th:href="@{'/movieform?movie_id='} + ${movie.getmovieId()}">Edit</a></td>
+    </tr>
+    <tr th:remove="all">
+        <td>Jurassic Park</td>
+
+        <td><a href="movieform.html">Edit</a></td>
+    </tr>
+
+</table>
+
+</body>
+</html>

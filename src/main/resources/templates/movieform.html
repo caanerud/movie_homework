@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add/Edit Movie</title>
+    <link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}"/>
+
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html" th:href="@{/}">Home</a></li>
+        <li><a href="movieform.html" th:href="@{/movieform}">Add Movie</a></li>
+    </ul>
+</nav>
+
+
+<h1>Add/Edit Movie</h1>
+
+<p>Please <span>add/edit</span> a movie.</p>
+
+<form action="index.html" method="post">
+    <label>
+        <span>Movie Title:</span>
+        <input type="text" name="title" value="" required="required"/>
+    </label>
+
+    <label>
+        <span>Release Date (ex: 2000-12-30):</span>
+        <input type="text" name="date" value="" required="required"/>
+    </label>
+
+    <label>
+        <span>Length:</span>
+        <input type="text" name="length" value=""/>
+    </label>
+
+    <label>
+        <span>Primary Language:</span>
+        <input type="text" name="language" value=""/>
+    </label>
+
+    <label>
+        <span>Rating:</span>
+        <input type="text" name="rating" value=""/>
+    </label>
+
+    <label>
+        <span>Country:</span>
+        <input type="text" name="country" value=""/>
+    </label>
+
+    <label>
+        <span>Budget:</span>
+        <input type="text" name="budget" value=""/>
+    </label>
+
+    <label>
+        <span>Gross:</span>
+        <input type="text" name="gross" value=""/>
+    </label>
+
+    <label>
+        <span>Released By:</span>
+        <input type="text" name="released" value=""/>
+    </label>
+
+    <input type="hidden" name="movieId" value="" />
+
+    <button>Save Movie</button>
+</form>
+
+
+</body>
+</html>
